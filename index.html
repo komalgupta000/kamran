@@ -40,6 +40,49 @@
         border-radius: 50px;
         font-size: 18px;
     }
+    .section-right ul li {
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.section-right ul li:hover {
+    color: #007e6a;
+    transform: scale(1.08);
+}
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    transition: right 0.4s ease;
+    padding: 40px 25px;
+    z-index: 3000;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu ul li {
+    list-style: none;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+}
+.mobile-menu ul li {
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.mobile-menu ul li:hover {
+    background: #e8fff7;
+    transform: translateX(10px);
+    border-radius: 8px;
+}
     .section-1{
         background-image:url(https://img.freepik.com/free-photo/flat-lay-workstation-with-copy-space-laptop_23-2148430867.jpg?semt=ais_incoming&w=740&q=80);
         background-size: cover;
@@ -285,7 +328,19 @@
             </ul>
         </div>
             <i class="fa-solid fa-bars fs-5 d-md-block d-xl-none"></i>
-    </div>
+</div>
+
+<!-- ⭐⭐ ADD MOBILE MENU HERE ⭐⭐ -->
+<div class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+    <button class="btn btn-success">Hire Me</button>
+</div>
+
 
     <div class="container-fluid section-1">
         <div class="row container">
@@ -544,7 +599,22 @@ function typeWriter() {
 }
 typeWriter();
 
+// ---------------- MOBILE MENU ----------------
+const menuIcon = document.querySelector(".fa-bars");
+const mobileMenu = document.getElementById("mobileMenu");
+const pageContent = document.body;
 
+// Open / Close menu
+menuIcon.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+    if (!mobileMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+        mobileMenu.classList.remove("active");
+    }
+});
 
 
 </script>
