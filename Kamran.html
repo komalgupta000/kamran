@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<style>
+    .header{
+        width: 100%;
+        height: 12vh;
+        background-color: aliceblue;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        z-index: 1;
+    }
+    .section-left h1{
+        font-family: monospace;
+        font-size: 32px;
+        font-weight: 700;
+    }
+    .section-right li{
+        list-style: none;
+        display: inline;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .section-right i{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .section-right button{
+        border-radius: 50px;
+        font-size: 18px;
+    }
+    .section-1{
+        background-image:url(https://img.freepik.com/free-photo/flat-lay-workstation-with-copy-space-laptop_23-2148430867.jpg?semt=ais_incoming&w=740&q=80);
+        background-size: cover;
+        height: 88vh;
+    }
+    .section-1 p{
+        color:white;
+        text-align: center;
+    }
+    
+    .section-1 img{
+        border-radius:50%;
+        width:200px;
+        height:200px;
+        margin-bottom: 40px;
+    }
+    .section-1 h1{
+        text-align: center;
+        padding-top: 150px;
+        font-size: 65px;
+        color: white;
+        font-family: Bebas Neue;
+    }
+    @media(max-width:550px){
+        .section-1 h1{
+            font-size:40px;
+        }
+    }
+    .section-2{
+        margin-top: 70px;
+    }
+    .section-2 .card{
+        background-color: gainsboro;
+        border-radius: 20px;
+    }
+    .section-2 .card img{
+        width:100%;
+        height:auto;
+    }
+    .para{
+        margin: auto;
+        margin-left: 30px;
+    }
+    .para span{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .para h1{
+        font-size: 45px;
+        font-weight: 700;
+        font-family: Playfair Display;
+        margin-bottom: 21px;
+        margin-top: 10px;
+        color: #265985;
+    }
+    .para p{
+        font-size: 18px;
+    }
+    @media(max-width:550px){
+        .section-1{
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+    }
+    /* @media(max-width:955px){
+        .section-1 {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+    } */
+     
+
+    @media(max-width:550px){
+        .section-2 .para{
+            position: relative;
+            top: 40px;
+        }
+    }
+    .para button{
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    .info i{
+        font-size: 22px;
+        color:#275c8b;
+    }
+    .info a{
+        text-decoration: none;
+    }
+    .section-3{
+        background-color: #f6f6f6;
+        margin-top: 50px;
+    }
+    .section-3 h1{
+        padding-top: 70px;
+        margin-bottom: 50px;
+        text-align: center;
+        font-family: Pacifico;
+        font-weight: 700;
+    }
+    .section-3 img{
+        width: 100px;
+        padding: 5px;
+    }
+    .section-3 .card{
+        text-align: center;
+        border-radius: 20px;
+        /* margin-top: 20px; */
+        margin-bottom: 70px;
+    }
+    .section-3 .card:hover{
+        transform: scale(1.05);
+        box-shadow: 0px 2px 4px 6px #275c8b;
+    }
+    .section-4{
+        margin-top: 90px;
+    }
+    .section-4 .card{
+        border-radius: 10px;
+    }
+    .section-4 .card img{
+        width:100%;
+        height:auto;
+    }
+    .skill{
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+    .section-5{
+        margin-top: 90px;
+        background-color: #f6f6f6;
+        /* margin-bottom: 50px */
+    }
+    .section-5 h1{
+        text-align: center;
+        padding-top: 70px;
+        font-family: Bebas Neue;
+        font-weight: 700;
+        margin-bottom: 40px;
+    }
+    .section-5 .card{
+        width: 360px;
+        margin: auto;
+        margin-bottom: 50px;
+        border-radius: 20px;
+    }
+    .section-5 img{
+        width: 360px;
+        border-radius: 20px;
+    }
+    .image-popup {
+        display: none;/* by default hide */
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+    }
+    .image-popup img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        animation: zoomIn 0.3s ease;
+    }
+    @keyframes zoomIn {
+        from {transform: scale(0.5);}
+        to {transform: scale(1);}
+    }
+    .footer {
+      background: linear-gradient(135deg, #1c1c1c, #000);
+      color: #e0e0e0;
+      padding: 50px 0 20px;
+      text-align: center;
+    }
+    .footer h5 {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .footer p {
+      font-size: 14px;
+      color: #bbb;
+    }
+    .footer a {
+      color: #bbb;
+      text-decoration: none;
+      margin: 0 12px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+    .footer a:hover {
+      color: #ff4d6d;
+    }
+    .social-icons a {
+      font-size: 22px;
+      margin: 0 10px;
+      color: #bbb;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ff4d6d;
+      transform: scale(1.2);
+    }
+    .footer-bottom {
+      margin-top: 30px;
+      font-size: 13px;
+      border-top: 1px solid #333;
+      padding-top: 15px;
+      color: #888;
+    }
+    @media(max-width:748px){
+        .section-1 .row{
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+</style>
+<body>
+    <div class="container-fluid header">
+        <div class="section-left">
+            <h1>Kamran khan</h1>
+        </div>
+        <div class="section-right d-xl-block d-md-none d-none">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+                <button class="btn btn-success">Hire Me</button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-moon"></i>
+            </ul>
+        </div>
+            <i class="fa-solid fa-bars fs-5 d-md-block d-xl-none"></i>
+    </div>
+
+    <div class="container-fluid section-1">
+        <div class="row container">
+            <div class="col-lg-6 col-md-12  d-flex flex-column align-items-center justify-content-center">
+        <h1>I'm Kamran khan</h1>
+        <p>A passionate graphic designer dedicated to creating bold, modern, and meaningful designs that leave a lasting impression.</p>
+        <img src="image/ab.jpg" alt="">
+        </div>
+        </div>
+    </div>
+    <div class="container section-2">
+        <div class="row">
+            <div class="col-xl-4 col-md-12 col-12">
+                <div class="card">
+                    <img src="image/p-removebg-preview.png" alt="">
+                </div>
+                </div>
+                <div class="col-xl-8 col-md-12 col-12">
+                    <div class="para">
+                    <span>MY BIOGRAPHY</span>
+                    <h1>Turning Simple Concepts <br> Into Stunning Designs</h1>
+                    <p>As a creative Graphic Designer, I specialize in crafting visuals that bring <br>ideas to life. My designs blend creativity with strategy, ensuring every <br>project is both impactful and memorable. From logos to complete brand <br>identities, I focus on delivering designs that truly reflect a brand’s vision</p>
+                    <div class="info">
+                        <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                        <p><strong>Name:</strong> Kamran khan</p>
+                        </div>
+                        <div class="col-6">
+                        <p><strong>From:</strong> Bihar sharif</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <p><strong>Email:</strong> <a href="mailto:example@mail.com">  kamrankhan887719@gmail.com</a></p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <p><strong>Phone:</strong> <a href="tel:+9162682386">+91 9162682386</a></p>
+                        </div>
+                        <p><strong>Follow Me On:</strong> <i class="fa-brands fa-facebook-f"></i>  <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-instagram"></i></p>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" style="background-color: #007e6a">Hire Me</button>
+                    <button class="btn btn-success" style="background-color: #00c16e; margin-left: 10px;">Download CV</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="section-3">
+    <div class="container">
+        <h1>What I Do For You </h1>
+        <div class="row">
+            <div class="col-xl-4 col-md-6 col-12">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqpBQZbR0JZjv1hR8qEXo7nQch4g48bYo25w&s" alt="">
+                    <h2>Photoshop</h2>
+                    <p>Mastering Photoshop to turn imagination into professional, eye-catching designs.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-12">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI9kpUFkogXF-pME0KKzYiVwDpYmaPwq0VRw&s" alt="" style="width: 150px;">
+                    <h2>illustrator</h2>
+                    <p>With Illustrator, I design clean, scalable vector graphics that make brands stand out.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-12">
+                <div class="card">
+                    <img src="https://images.seeklogo.com/logo-png/24/1/coreldraw-x7-logo-png_seeklogo-248595.png" alt="">
+                    <h2>Coral Draw</h2>
+                    <p>I use CorelDRAW to design precise, creative, and versatile graphics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="section-4 container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="card">
+                <img src="https://kritagyata.in/wp-content/uploads/2024/01/graphic-design-1500-x-900-picture-lpuf40e9jm621ews.jpg" alt="" style="height: 450px;border-radius: 10px;">
+            </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="skill">
+                <span>MY SKILLs</span>
+                <h1>My Featured skills</h1>
+                <p>I specialize in Graphic Design basics that build a strong foundation for creative projects. My focus is on turning design principles into visuals that truly connect with the audience</p>
+                <h6>UI/UX Design</h6>
+                <div class="progress-bar" style="height: 7px; background-color: gray;width: 100%; border-radius: 10px;">
+                <div class="progress-container" style="height:7px; background-color: purple;width:70%">
+                 </div>
+                </div><br>
+                <h6>Branding Design</h6>
+                <div class="progress-bar" style="height: 7px; background-color: gray;width: 100%; border-radius: 10px;">
+                <div class="progress-container" style="height:7px; background-color: purple;width:60%">
+                 </div>
+                </div><br>
+                <h6>Contrast & Hierarchy</h6>
+                <div class="progress-bar" style="height: 7px; background-color: gray;width: 100%; border-radius: 10px;">
+                <div class="progress-container" style="height:7px; background-color: purple;width:50%">
+                 </div>
+                </div><br>
+                <h6>Creativity & Innovation</h6>
+                <div class="progress-bar" style="height: 7px; background-color: gray;width: 100%; border-radius: 10px;">
+                <div class="progress-container" style="height:7px; background-color: purple;width:80%">
+                 </div>
+                </div><br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid section-5">
+        <h1>My Success Work</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <img src="image/img1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <img src="image/img2.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <img src="image/img3.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <img src="image/img4.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <img src="image/img5.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 ">
+                <div class="card ">
+                    <img src="image/img6.jpg" alt="" style="height: 350px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5>About Me</h5>
+          <p>Hi, I’m a passionate <b>Graphic Designer</b> who loves creating bold visuals, creative branding, and modern digital art.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Portfolio</h5>
+          <a href="#branding">Branding</a> |
+          <a href="#illustrations">Illustrations</a> |
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5>Follow Me</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+        © 2025 Kamran khan | Graphic Designer | All Rights Reserved
+      </div>
+    </div>
+    </div>
+    <div class="image-popup" id="imagePopup">
+      <img id="popupImg" src="" alt="">
+        </div>
+    <script>
+// saare images select karo
+const images = document.querySelectorAll(".section-5 img");
+const popup = document.getElementById("imagePopup");
+const popupImg = document.getElementById("popupImg");
+
+// Hover effect (mouse over & out)
+images.forEach(img => {
+  img.addEventListener("mouseover", () => {
+    img.style.transform = "scale(1.1)";
+    img.style.transition = "transform 0.4s ease";
+  });
+
+  img.addEventListener("mouseout", () => {
+    img.style.transform = "scale(1)";
+  });
+});
+
+// Scroll fade-in effect
+window.addEventListener("scroll", () => {
+  images.forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      img.style.opacity = "1";
+      img.style.transform = "translateY(0) scale(1)";
+      img.style.transition = "all 0.6s ease";
+    }
+  });
+});
+
+// Image popup open
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    popup.style.display = "flex"; 
+    popupImg.src = img.src;       
+  });
+});
+
+// Popup close
+popup.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+
+// Section-2 ke image ko select karo
+const section2Img = document.querySelector(".section-2 img");
+
+// Style directly apply karna
+section2Img.style.borderRadius = "20px";
+section2Img.style.boxShadow = "0px 4px 15px rgba(0,0,0,0.3)";
+section2Img.style.transition = "all 0.4s ease";
+
+// Hover effect JS se
+section2Img.addEventListener("mouseover", () => {
+  section2Img.style.transform = "scale(1.1)";
+  section2Img.style.boxShadow = "0px 6px 20px rgba(0,0,0,0.5)";
+});
+
+section2Img.addEventListener("mouseout", () => {
+  section2Img.style.transform = "scale(1)";
+  section2Img.style.boxShadow = "0px 4px 15px rgba(0,0,0,0.3)";
+});
+
+const heading = document.querySelector(".section-1 h1");
+const text = heading.textContent;   // pehle se likha text save karlo
+heading.textContent = "";           // h1 ko khali kar do
+heading.style.color = "#00ffcc";
+heading.style.textShadow = "0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    heading.textContent += text.charAt(i);  // ek ek letter add karo
+    i++;
+    setTimeout(typeWriter, 150);            // 150ms delay
+  }
+}
+typeWriter();
+
+
+
+
+</script>
+
+</body>
+</html>
